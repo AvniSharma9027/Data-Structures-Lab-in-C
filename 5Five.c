@@ -10,14 +10,14 @@ int main() {
     }
     for(i = 0; i < n - 1; i++) {
         max = 0;
-        for(j = 1; j <= i; j++) {
-            if(arr[j] > arr[max]) {
+        for(j = 1; j < n-i; j++) {
+            if (arr[j] > arr[max]) {
                 max = j;
             }
         }
-        temp = arr[max];
-        arr[max] = arr[i];
-        arr[i] = temp;
+        temp = arr[n-i-1];        
+        arr[n-i-1] = arr[max];     
+        arr[max] = temp;
     }
     printf("Sorted array: ");
     for(i = 0; i < n; i++) {
